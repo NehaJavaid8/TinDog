@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Real Estate Calculator</h1>
+  
+  <div id="errorMessage"></div>
+
+  <div class="container">
+    <div class="section">
+      <form id="realEstateForm">
+        <!-- Row 1: Property Details -->
+        <div class="row-title">Property Details</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="width">Width</label>
+            <input type="number" id="width" placeholder="Enter width">
+          </div>
+          <div class="form-group">
+            <label for="length">Length</label>
+            <input type="number" id="length" placeholder="Enter length">
+          </div>
+          <div class="form-group">
+            <label for="area">Area</label>
+            <input type="number" id="area" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="rate">Rate</label>
+            <input type="number" id="rate" placeholder="Enter rate">
+          </div>
+          <div class="form-group">
+            <label for="totalAmount">Total Amount</label>
+            <input type="number" id="totalAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+        </div>
+
+        <!-- Row 2: Downpayment & Confirmation -->
+        <div class="row-title">Downpayment & Confirmation</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="downpaymentPercentage">Downpayment %</label>
+            <input type="number" id="downpaymentPercentage" placeholder="Enter %">
+          </div>
+          <div class="form-group">
+            <label for="downpaymentAmount">Downpayment Amount</label>
+            <input type="number" id="downpaymentAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="confirmationPercentage">Confirmation %</label>
+            <input type="number" id="confirmationPercentage" placeholder="Enter %">
+          </div>
+          <div class="form-group">
+            <label for="confirmationAmount">Confirmation Amount</label>
+            <input type="number" id="confirmationAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+        </div>
+
+        <!-- Row 3: Quarterly Payments -->
+        <div class="row-title">Quarterly Payments</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="noOfQuarters">No. of Quarters</label>
+            <input type="number" id="noOfQuarters" placeholder="Enter number">
+          </div>
+          <div class="form-group">
+            <label for="quarterPercentage">Quarter %</label>
+            <input type="number" id="quarterPercentage" placeholder="Enter %">
+          </div>
+          <div class="form-group">
+            <label for="quarterTotalPercentage">Quarter Total %</label>
+            <input type="number" id="quarterTotalPercentage" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="quarterAmount">Quarter Amount</label>
+            <input type="number" id="quarterAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="perQuarterAmount">Per Quarter Amount</label>
+            <input type="number" id="perQuarterAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+        </div>
+
+        <!-- Row 4: Monthly Payments -->
+        <div class="row-title">Monthly Payments</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="noOfMonths">No. of Months</label>
+            <input type="number" id="noOfMonths" placeholder="Enter number">
+          </div>
+          <div class="form-group">
+            <label for="perMonthPercentage">Per Month %</label>
+            <input type="number" id="perMonthPercentage" placeholder="Enter %">
+          </div>
+          <div class="form-group">
+            <label for="monthTotalPercentage">Month Total %</label>
+            <input type="number" id="monthTotalPercentage" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="monthlyAmount">Monthly Amount</label>
+            <input type="number" id="monthlyAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="perMonthAmount">Per Month Amount</label>
+            <input type="number" id="perMonthAmount" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+        </div>
+
+        <!-- Row 5: Possession & Summary -->
+        <div class="row-title">Possession & Summary</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="possessionPercentage">Possession %</label>
+            <input type="number" id="possessionPercentage" placeholder="Enter %">
+          </div>
+          <div class="form-group">
+            <label for="possession">Possession Amount</label>
+            <input type="number" id="possession" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+          <div class="form-group">
+            <label for="total">Total</label>
+            <input type="number" id="total" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;"> 
+          </div>
+          <div class="form-group">
+            <label for="difference">Difference</label>
+            <input type="number" id="difference" readonly class="readonly" style="    
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 0.875rem;">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Payment Plan Section -->
+    <div class="section">
+      <div class="row-title">Payment Plan</div>
+      <table id="paymentPlanTable">
+        <thead>
+          <tr>
+            <th style="font-size: 20px;">Due Date</th>
+            <th style="font-size: 20px;">Payment Type</th>
+            <th style="font-size: 20px;">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Payment plan rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+      <button id="pdfButton">Download PDF</button>
+    </div>
+  </div>
+
+  <!-- Include jsPDF and html2canvas libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
